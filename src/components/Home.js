@@ -1,0 +1,29 @@
+import React from 'react';
+import Navbar from './Navbar';
+import './Home.css'
+
+function Home() {
+  return (
+    <div className="container "  >
+      <div className="row mt-5 mb-5" >
+        <div className="col-md-6" >
+          <h5 >Welcome to ASD Detection Site</h5>
+          <p className='text'>
+         where cutting-edge technology meets compassion in the pursuit of early
+           identification and support for Autism Spectrum Disorder (ASD). ASD is a neurodevelopmental condition that affects 
+           individuals in unique ways, making early detection crucial for timely intervention and support. Our platform leverages 
+           state-of-the-art tools and assessments, guided by the latest research in autism detection, to provide a comprehensive 
+           and user-friendly experience. Whether you are a concerned parent, caregiver, or healthcare professional, our mission is
+            to empower you with accurate information and resources for a better understanding of ASD. Together, let's navigate the
+             journey of ASD detection with empathy, accuracy, and the shared goal of improving lives.
+          </p>
+        </div>
+        <div className="col-md-6 text-md-end ">
+          <button className="btn btn-primary">Take Test</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Home;
