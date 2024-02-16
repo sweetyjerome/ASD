@@ -11,6 +11,7 @@
 
 .text{
     color: whitesmoke;
+    margin-top: 10%;
 }
 .heading{
   color: white;
@@ -18,7 +19,10 @@
 }
 .content{
   padding: 3%;
+  padding-top: 10%;
 }
 .button{
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
