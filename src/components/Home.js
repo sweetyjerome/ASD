@@ -4,10 +4,10 @@ import './Home.css'
 
 function Home() {
   return (
-    <div className="container"  >
-      <div className="row" >
+    <div className="container-main"  >
+      <div className="row content" >
         <div className="col-md-6" >
-          <h5 >Welcome to ASD Detection Site</h5>
+          <h5 className='heading' >Welcome to ASD Detection Site</h5>
           <p className='text'>
          where cutting-edge technology meets compassion in the pursuit of early
            identification and support for Autism Spectrum Disorder (ASD). ASD is a neurodevelopmental condition that affects 
@@ -18,7 +18,7 @@ function Home() {
              journey of ASD detection with empathy, accuracy, and the shared goal of improving lives.
           </p>
         </div>
-        <div className="col-md-6 text-md-end ">
+        <div className="col-md-6 text-md-center ">
           <button className="btn btn-primary">Take Test</button>
         </div>
       </div>

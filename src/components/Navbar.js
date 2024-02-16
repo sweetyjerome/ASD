@@ -7,7 +7,7 @@ function Navbar() {
    <>
       <nav  className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid d-flex justify-content-start align-items-center ">
-          <a className="navbar-brand" href="/">ASD</a>
+          <a className="navbar-brand navbar-heading" href="/">ASD</a>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav ms-auto custom-navbar-list">
               <li className="nav-item">

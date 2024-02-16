@@ -1,4 +1,4 @@
-.container{
+.container-main{
     /* position: absolute;
     margin-top: 7%; */
     background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7 )), 
@@ -12,3 +12,11 @@
 .text{
     color: whitesmoke;
 }
+.heading{
+  color: white;
+  text-align: center;
+}
+.content{
+  padding: 3%;
+}
+.button
