@@ -4,8 +4,8 @@ import './Home.css'
 
 function Home() {
   return (
-    <div className="container "  >
-      <div className="row mt-5 mb-5" >
+    <div className="container"  >
+      <div className="row" >
         <div className="col-md-6" >
           <h5 >Welcome to ASD Detection Site</h5>
           <p className='text'>
