@@ -1,8 +1,24 @@
-/* Navbar.css */
+
 .custom-navbar-list .nav-item {
-    margin-left: 50px; /* Adjust the margin as needed */
+    margin-left: 70px; /* Adjust the margin as needed */
   }
   
   .navbar-heading{
     font-weight: bolder;
   }
+  /* Navbar.css */
+  .navbar {
+    background-color: transparent ;
+  }
+
+.navbar-heading {
+  color: whitesmoke;
+}
+
+.custom-navbar-list .nav-link {
+  color: whitesmoke;
+}
+
+.custom-navbar-list .nav-link:hover {
+  color: lightgray;
+}
