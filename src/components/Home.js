@@ -7,7 +7,7 @@ function Home() {
     <div className="container-main"  >
       <div className="row content" >
         <div className="col-md-6" >
-          <h5 className='heading' >Welcome to ASD Detection Site</h5>
+          <h1 className='heading' >Welcome to ASD Detection Site</h1>
           <p className='text'>
          where cutting-edge technology meets compassion in the pursuit of early
            identification and support for Autism Spectrum Disorder (ASD). ASD is a neurodevelopmental condition that affects 
@@ -18,7 +18,7 @@ function Home() {
              journey of ASD detection with empathy, accuracy, and the shared goal of improving lives.
           </p>
         </div>
-        <div className="col-md-6 text-md-center ">
+        <div className="col-md-6 text-md-center button">
           <button className="btn btn-primary">Take Test</button>
         </div>
       </div>
