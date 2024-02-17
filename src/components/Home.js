@@ -5,7 +5,7 @@ import './Home.css'
 function Home() {
   return (
     <div className="container-main"  >
-      <div className="row content" >
+      <div className="row content">
         <div className="col-md-6" >
           <h1 className='heading' >Welcome to ASD Detection Site</h1>
           <p className='text'>
