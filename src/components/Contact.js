@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 
 function Contact() {
   return (
-    <div className="container-main">
+    <div className="container-main content">
       <h2>Contact Us</h2>
       <p>If you have any questions or feedback, please feel free to get in touch with us!</p>
       <p>Email: info@example.com</p>

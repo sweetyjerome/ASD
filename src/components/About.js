@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 
 function About() {
   return (
-    <div className="container-main">
+    <div className="container-main content">
       <h2 >About Us</h2>
       <p >Welcome to our website! We're dedicated to providing valuable information and resources for our users.</p>
       <h3 >Our Mission</h3>
