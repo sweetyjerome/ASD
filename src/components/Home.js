@@ -1,8 +1,15 @@
 import React from 'react';
 import Navbar from './Navbar';
 import './Home.css'
+import { useNavigate } from 'react-router-dom';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleTakeTestClick = () => {
+    // Navigate to the form page when "Take Test" button is clicked
+    navigate('/Form1');
+  };
   return (
     <div className="container-main"  >
       <div className="row content">
@@ -19,7 +26,7 @@ function Home() {
           </p>
         </div>
         <div className="col-md-6 text-md-center button">
-          <button className="btn btn-primary">Take Test</button>
+          <button className="btn btn-primary" onClick={handleTakeTestClick} >Take Test</button>
         </div>
       </div>
     </div>

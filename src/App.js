@@ -5,7 +5,8 @@ import './App.css';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-
+import QuestionnaireMRI from './components/Quest';
+import MyForm from './components/Form';
 function App() {
   return (
     <>
@@ -13,6 +14,8 @@ function App() {
     <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route exact path="/Form1" element={<MyForm />} />
+        <Route exact path="/form" element={<QuestionnaireMRI/>} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
       </Routes>

@@ -5,7 +5,7 @@ import { Router } from 'react-router-dom';
 function Navbar() {
   return (
    <>
-      <nav  className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav  className="navbar navbar-expand-lg ">
         <div className="container-fluid d-flex justify-content-start align-items-center ">
           <a className="navbar-brand navbar-heading" href="/">ASD</a>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
