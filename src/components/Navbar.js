@@ -17,7 +17,7 @@ function Navbar() {
                 <a className="nav-link" href="/About">About</a>
               </li>
               <li className="nav-item custom-margin">
-                <a className="nav-link" href="/">Contact</a>
+                <a className="nav-link" href="/Contact">Contact</a>
               </li>
             </ul>
           </div>
