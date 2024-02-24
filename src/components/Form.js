@@ -35,7 +35,7 @@ const MyForm = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 ">
       <h2 className="mb-4">Fill in the basic details</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
