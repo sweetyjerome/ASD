@@ -3,24 +3,17 @@ from flask_cors import CORS
 import numpy as np
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import AdaBoostClassifier
-import joblib  # You can use joblib to save and load objects
+import joblib 
 
-app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
-print("Running")
-
-# Load the pre-trained model
+app = Flask(_name_)
+CORS(app)
+print("Running ")
+# Load the pre-trained model and scaler
 ada_clf = AdaBoostClassifier(n_estimators=50, random_state=42)
-
 # Load your scaler (you should use the same scaler that you used during training)
 scaler = StandardScaler()
-
-# Load scaler_mean and scaler_scale from a file or another storage mechanism
-# Make sure to replace 'path/to/scaler_mean_scale.joblib' with the actual path
-scaler_mean_scale_path = 'scaler_mean_scale.joblib'
-scaler_mean, scaler_scale = joblib.load(scaler_mean_scale_path)
-
-# Set the loaded mean and scale to the scaler
+scaler_mean = ...  # Load the mean from your training data
+scaler_scale = ...  # Load the scale from your training data
 scaler.mean_ = scaler_mean
 scaler.scale_ = scaler_scale
 
@@ -41,5 +34,5 @@ def predict():
     # Return the prediction as JSON
     return jsonify({'prediction': prediction[0]})
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     app.run(port=5000)
