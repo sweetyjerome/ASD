@@ -22,11 +22,13 @@ const QuestionnaireMRI = () => {
     },
     child: {
       questionnaire: [
-        'How easy is it for you to get eye contact with your child?',
+        'S/he often notices small sounds when others do not',
+        'S/he usually concentrates more on the whole picture, rather than the small detail',
         'In a social group, s/he can easily keep track of several different people’s conversations',
-        'S/he finds it easy to go back and forth between different activities',
-        'S/he doesn’t know how to keep a conversation going with his/her peers',
+        'S/he finds it easy to go back and forth between different activities',        'I find it easy to read between the lines when someone is talking to me',
+        'S/he doesnt know how to keep a conversation going with his/her peers',
         'S/he is good at social chit-chat',
+        'When s/he read a story, s/he finds it difficult to work out the characters intentions or feelings',
         'When s/he was in preschool, s/he used to enjoy playing games involving pretending with other children',
         'S/he finds it easy to work out what someone is thinking or feeling just by looking at their face',
         'S/he finds it hard to make new friends',
@@ -34,32 +36,33 @@ const QuestionnaireMRI = () => {
     },
     adolescent: {
       questionnaire: [
+        'S/he often notices small sounds when others do not',
+        'S/he usually concentrates more on the whole picture, rather than the small detail',
         'In a social group, s/he can easily keep track of several different people’s conversations',
-        'If there is an interruption, s/he can switch back to what s/he was doing very quickly',
-        'I find it easy to read between the lines when someone is talking to me',
-        'I know how to tell if someone listening to me is getting bored',
+        'S/he finds it easy to go back and forth between different activities',      
+        'S/he doesnt know how to keep a conversation going with his/her peers',
+        'S/he is good at social chit-chat',
         'When s/he was younger, s/he used to enjoy playing games involving pretending with other children',
-        'S/he finds social situations easy',
         'S/he finds it difficult to imagine what it would be like to be someone else',
-        'S/he finds it easy to work out what someone is thinking or feeling just by looking at their face',
+        'S/he finds social situations easy',
         'S/he finds it hard to make new friends',
-        'I find it difficult to work out people’s intentions',
       ],
     },
     adult: {
       questionnaire: [
+        'S/he notices patterns in things all the time',
         'S/he usually concentrates more on the whole picture, rather than the small detail',
-        'I find it easy to do more than one thing at once',
-        'I find it easy to read between the lines when someone is talking to me',
+        'S/he find it easy to do more than one thing at once',
         'If there is an interruption, s/he can switch back to what s/he was doing very quickly',
-        'I find it easy to tell if someone else is interested or bored with what I am saying',
-        'I know how to tell if someone listening to me is getting bored',
-        'I like to collect information about categories of things (e.g., types of car, types of bird, types of train, types of plant, etc.)',
-        'I find it easy to work out what someone is thinking or feeling just by looking at their face',
-        'I find social situations easy',
-        'I find it difficult to work out people’s intentions',
+        'S/he find it easy to read between the lines when someone is talking to me',
+        'S/he know how to tell if someone listening to me is getting bored',
+        'When S/he is reading a story, S/he find it difficult to work out the characters intentions',
+        'S/he like to collect information about categories of things (e.g., types of car, types of bird, types of train, types of plant, etc.)',
+        'S/he find it easy to work out what someone is thinking or feeling just by looking at their face',
+        'S/he find it difficult to work out people’s intentions',
       ],
     },
+
   }), []);
 
   const [answers, setAnswers] = useState({
@@ -132,8 +135,11 @@ const QuestionnaireMRI = () => {
                 onChange={(e) => handleAnswerChange(question, e.target.value)}
                 value={answers.questionnaire[question]}
               >
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
+                <option value="Definitely Agree">Definitely Agree</option>
+                <option value="Slightly Agree">Slightly Agree</option>
+                <option value="Slightly Disagree">Slightly Disagree</option>
+                <option value="Definitely Disagree">Definitely Disagree</option>
+
               </select>
             </li>
           ))}
@@ -205,7 +211,7 @@ const QuestionnaireMRI = () => {
           {/* Facial Image upload */}
           <label>
             Upload Facial Image:
-            <input type="file" onChange={(e) => handleFileUpload(e, 'facialImage')} required />
+            <input type="file" onChange={(e) => handleFileUpload(e, 'facialImage')}  />
           </label>
         </div>
 
@@ -213,7 +219,7 @@ const QuestionnaireMRI = () => {
           {/* Video upload */}
           <label>
             Upload Video:
-            <input type="file" onChange={(e) => handleFileUpload(e, 'video')} required />
+            <input type="file" onChange={(e) => handleFileUpload(e, 'video')} />
           </label>
         </div>
         
