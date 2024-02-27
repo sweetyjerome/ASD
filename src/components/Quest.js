@@ -10,43 +10,43 @@ const QuestionnaireMRI = () => {
       questionnaire: [
       {
         question: 'Does your child look at you when you call his/her name?',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
         question: 'How easy is it for you to get eye contact with your child?',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
         question:'Does your child point to indicate that s/he wants something? (e.g., a toy that is out of reach)',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
         question: 'Does your child point to share interest with you? (e.g., pointing at an interesting sight)',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
         question: 'Does your child pretend? (e.g., care for dolls, talk on a toy phone)',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
         question: 'Does your child follow where you’re looking?',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
         question:'If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g., stroking hair, hugging them)',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
-        question:'Would you describe your child’s first words as:',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        question:'Describe your emotion when you heard your child’s first words as.',
+        options: {' ':-1,'Strange(Non-Verbal)': 1, 'Confused': 1, 'Neutral': 0, 'Happy': 0,},
       },
       {
         question: 'Does your child use simple gestures? (e.g., wave goodbye)',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+        options: {' ':-1,'Always': 0, 'Usually': 0, 'Rarely': 1, 'Never': 1, },
       },
       {
         question: 'Does your child stare at nothing with no apparent purpose?',
-        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },  
+        options: {' ':-1,'Always': 1, 'Usually': 1, 'Rarely': 0, 'Never': 0, },
       },      
       ],
     },
@@ -218,8 +218,7 @@ const QuestionnaireMRI = () => {
     event.preventDefault();
   
     // Calculate the sum of option values for each question
-    const scores = questionnaireData[ageGroup]?.questionnaire.map
-    ((questionData) => {
+    const scores = questionnaireData[ageGroup]?.questionnaire.map((questionData) => {
       const selectedOption = answers.questionnaire[questionData.question];
       const optionValue = questionData.options[selectedOption];
       return optionValue;
