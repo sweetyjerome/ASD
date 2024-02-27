@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const QuestionnaireMRI = () => {
@@ -8,88 +8,192 @@ const QuestionnaireMRI = () => {
   const questionnaireData = useMemo(() => ({
     toddler: {
       questionnaire: [
-        'Does your child look at you when you call his/her name?',
-        'How easy is it for you to get eye contact with your child?',
-        'Does your child point to indicate that s/he wants something? (e.g., a toy that is out of reach)',
-        'Does your child point to share interest with you? (e.g., pointing at an interesting sight)',
-        'Does your child pretend? (e.g., care for dolls, talk on a toy phone)',
-        'Does your child follow where you’re looking?',
-        'If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g., stroking hair, hugging them)',
-        'Would you describe your child’s first words as:',
-        'Does your child use simple gestures? (e.g., wave goodbye)',
-        'Does your child stare at nothing with no apparent purpose?',
+      {
+        question: 'Does your child look at you when you call his/her name?',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question: 'How easy is it for you to get eye contact with your child?',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question:'Does your child point to indicate that s/he wants something? (e.g., a toy that is out of reach)',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question: 'Does your child point to share interest with you? (e.g., pointing at an interesting sight)',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question: 'Does your child pretend? (e.g., care for dolls, talk on a toy phone)',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question: 'Does your child follow where you’re looking?',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question:'If you or someone else in the family is visibly upset, does your child show signs of wanting to comfort them? (e.g., stroking hair, hugging them)',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question:'Would you describe your child’s first words as:',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question: 'Does your child use simple gestures? (e.g., wave goodbye)',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },
+      },
+      {
+        question: 'Does your child stare at nothing with no apparent purpose?',
+        options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 0, 'Slightly Disagree': 0, 'Definitely Disagree': 1, },  
+      },      
       ],
     },
     child: {
       questionnaire: [
-        'S/he often notices small sounds when others do not',
-        'S/he usually concentrates more on the whole picture, rather than the small detail',
-        'In a social group, s/he can easily keep track of several different people’s conversations',
-        'S/he finds it easy to go back and forth between different activities',        'I find it easy to read between the lines when someone is talking to me',
-        'S/he doesnt know how to keep a conversation going with his/her peers',
-        'S/he is good at social chit-chat',
-        'When s/he read a story, s/he finds it difficult to work out the characters intentions or feelings',
-        'When s/he was in preschool, s/he used to enjoy playing games involving pretending with other children',
-        'S/he finds it easy to work out what someone is thinking or feeling just by looking at their face',
-        'S/he finds it hard to make new friends',
+        {
+          question: 'S/he often notices small sounds when others do not',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he usually concentrates more on the whole picture, rather than the small detail',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'In a social group, s/he can easily keep track of several different people’s conversations',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he finds it easy to go back and forth between different activities',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he doesnt know how to keep a conversation going with his/her peers',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he is good at social chit-chat',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'When s/he read a story, s/he finds it difficult to work out the characters intentions or feelings',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'When s/he was in preschool, s/he used to enjoy playing games involving pretending with other children',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he finds it easy to work out what someone is thinking or feeling just by looking at their face',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he finds it hard to make new friends',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
       ],
     },
     adolescent: {
       questionnaire: [
-        'S/he often notices small sounds when others do not',
-        'S/he usually concentrates more on the whole picture, rather than the small detail',
-        'In a social group, s/he can easily keep track of several different people’s conversations',
-        'S/he finds it easy to go back and forth between different activities',      
-        'S/he doesnt know how to keep a conversation going with his/her peers',
-        'S/he is good at social chit-chat',
-        'When s/he was younger, s/he used to enjoy playing games involving pretending with other children',
-        'S/he finds it difficult to imagine what it would be like to be someone else',
-        'S/he finds social situations easy',
-        'S/he finds it hard to make new friends',
+        {
+          question: 'S/he often notices small sounds when others do not',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he usually concentrates more on the whole picture, rather than the small detail',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'In a social group, s/he can easily keep track of several different people’s conversations',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he finds it easy to go back and forth between different activities',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he doesnt know how to keep a conversation going with his/her peers',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he is good at social chit-chat',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'When s/he was younger, s/he used to enjoy playing games involving pretending with other children',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he finds it difficult to imagine what it would be like to be someone else',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he finds social situations easy',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he finds it hard to make new friends',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
       ],
     },
+    
     adult: {
       questionnaire: [
-        'S/he notices patterns in things all the time',
-        'S/he usually concentrates more on the whole picture, rather than the small detail',
-        'S/he find it easy to do more than one thing at once',
-        'If there is an interruption, s/he can switch back to what s/he was doing very quickly',
-        'S/he find it easy to read between the lines when someone is talking to me',
-        'S/he know how to tell if someone listening to me is getting bored',
-        'When S/he is reading a story, S/he find it difficult to work out the characters intentions',
-        'S/he like to collect information about categories of things (e.g., types of car, types of bird, types of train, types of plant, etc.)',
-        'S/he find it easy to work out what someone is thinking or feeling just by looking at their face',
-        'S/he find it difficult to work out people’s intentions',
+        {
+          question: 'S/he notices patterns in things all the time',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he usually concentrates more on the whole picture, rather than the small detail',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he find it easy to do more than one thing at once',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'If there is an interruption, s/he can switch back to what s/he was doing very quickly',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he find it easy to read between the lines when someone is talking to me',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he know how to tell if someone listening to me is getting bored',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'When S/he is reading a story, S/he find it difficult to work out the characters intentions',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he like to collect information about categories of things (e.g., types of car, types of bird, types of train, types of plant, etc.)',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
+        {
+          question: 'S/he find it easy to work out what someone is thinking or feeling just by looking at their face',
+          options: {' ':-1,'Definitely Agree': 0, 'Slightly Agree': 0, 'Slightly Disagree': 1, 'Definitely Disagree': 1, },
+        },
+        {
+          question: 'S/he find it difficult to work out people’s intentions',
+          options: {' ':-1,'Definitely Agree': 1, 'Slightly Agree': 1, 'Slightly Disagree': 0, 'Definitely Disagree': 0, },
+        },
       ],
     },
-
   }), []);
-
+  
   const [answers, setAnswers] = useState({
     age: '',
     gender: '',
     jaundice: '',
     relation: '',
-    questionnaire: {}, // Store responses for ageGroup-specific questions
-    facialImage: null, // Store responses for facial image
-    video: null, // Store responses for video
+    questionnaire: {}, 
+    facialImage: null,
+    video: null, 
   });
-
-  useEffect(() => {
-    // Initialize answers with default values
-    setAnswers({
-      age: '',
-      gender: '',
-      jaundice: '',
-      relation: '',
-      questionnaire: questionnaireData[ageGroup]?.questionnaire.reduce((acc, question) => {
-        acc[question] = 'No';
-        return acc;
-      }, {}),
-      facialImage: null,
-      video: null,
-    });
-  }, [ageGroup, questionnaireData]);
 
   const handleAnswerChange = (question, answer) => {
     setAnswers((prevAnswers) => ({
@@ -102,10 +206,8 @@ const QuestionnaireMRI = () => {
   };
 
   const handleFileUpload = (event, fileType) => {
-    // Handle file upload logic here
     const file = event.target.files[0];
     console.log(`Uploaded ${fileType} File:`, file);
-    
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
       [fileType]: file,
@@ -113,36 +215,65 @@ const QuestionnaireMRI = () => {
   };
 
   const handleSubmit = (event) => {
-    // Handle form submission logic here
     event.preventDefault();
+  
+    // Calculate the sum of option values for each question
+    const scores = questionnaireData[ageGroup]?.questionnaire.map
+    ((questionData) => {
+      const selectedOption = answers.questionnaire[questionData.question];
+      const optionValue = questionData.options[selectedOption];
+      return optionValue;
+    });
+    console.log('Scores:', scores);
+    const totalScore = scores.reduce((sum, score) => sum + score, 0);
+    let finalScore;
+    if (ageGroup >= 4) {
+      finalScore = totalScore >= 7 ? 1 : 0;
+    } else {
+      finalScore = totalScore >= 4 ? 1 : 0;
+    }
+    console.log('Final Score:', finalScore);
+  
+    const orderedAnswers = {
+      score: finalScore,
+      age: answers.age,
+      gender: answers.gender,
+      jaundice: answers.jaundice,
+      relation: answers.relation,
+      facialImage: answers.facialImage,
+      video: answers.video,
+    };
     console.log('Form submitted!');
-    console.log('Answers:', answers);
+    console.log('Ordered Answers:', orderedAnswers);
   };
+  
 
   return (
     <div className="container mt-5">
       <h2 className="mb-4">Fill in the details</h2>
-      <p>Age Group: {ageGroup}</p>
+      <p>Age Group: {ageGroup.toUpperCase()}</p>
 
       <form onSubmit={handleSubmit}>
         <ul className="list-unstyled">
-          {/* AgeGroup-specific questions */}
-          {questionnaireData[ageGroup]?.questionnaire.map((question, index) => (
-            <li key={index} className="mb-3">
-              {question}
-              <select
-                className="form-select mt-2"
-                onChange={(e) => handleAnswerChange(question, e.target.value)}
-                value={answers.questionnaire[question]}
-              >
-                <option value="Definitely Agree">Definitely Agree</option>
-                <option value="Slightly Agree">Slightly Agree</option>
-                <option value="Slightly Disagree">Slightly Disagree</option>
-                <option value="Definitely Disagree">Definitely Disagree</option>
+          {questionnaireData[ageGroup]?.questionnaire.map((questionData, index) => (
+          <li key={index} className="mb-3">
+            {questionData.question}
+            <select
+              className="form-select mt-2"
+              onChange={(e) => handleAnswerChange(questionData.question, e.target.value)}
+              value={answers.questionnaire[questionData.question]}
+              required
+            >
+             {Object.entries(questionData.options).map(([option, value]) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+              ))}
+            </select>
+          </li>
+        ))}
 
-              </select>
-            </li>
-          ))}
+
         </ul>
 
         <div className="mb-3">
@@ -165,12 +296,12 @@ const QuestionnaireMRI = () => {
             className="form-select"
             id="gender"
             value={answers.gender}
-            onChange={(e) => setAnswers((prevAnswers) => ({ ...prevAnswers, gender: e.target.value }))}
+            onChange={(e) => setAnswers((prevAnswers) => ({ ...prevAnswers, gender: parseInt(e.target.value, 10) }))}
             required
           >
-            <option value="">Select Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
+            <option value=""> </option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
           </select>
 
           <label htmlFor="jaundice" className="form-label">
@@ -180,35 +311,34 @@ const QuestionnaireMRI = () => {
             className="form-select"
             id="jaundice"
             value={answers.jaundice}
-            onChange={(e) => setAnswers((prevAnswers) => ({ ...prevAnswers, jaundice: e.target.value }))}
+            onChange={(e) => setAnswers((prevAnswers) => ({ ...prevAnswers, jaundice: parseInt(e.target.value, 10) }))}
             required
           >
-            <option value="">Select Option</option>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+            <option value=""> </option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
           </select>
 
           <label htmlFor="relation" className="form-label">
-            Relation with Child:
+            Relation:
           </label>
           <select
             className="form-select"
             id="relation"
             value={answers.relation}
-            onChange={(e) => setAnswers((prevAnswers) => ({ ...prevAnswers, relation: e.target.value }))}
+            onChange={(e) => setAnswers((prevAnswers) => ({ ...prevAnswers, relation: parseInt(e.target.value, 10) }))}
             required
           >
-            <option value="">Select Relation</option>
-            <option value="Self">Self</option>
-            <option value="Parent">Parent</option>
-            <option value="Relative">Relative</option>
-            <option value="Healthcare Professional">Healthcare Professional</option>
-            <option value="Others">Others</option>
+            <option value=""> </option>
+            <option value="1">Self</option>
+            <option value="1">Parent</option>
+            <option value="0">Relative</option>
+            <option value="1">Healthcare Professional</option>
+            <option value="0">Others</option>
           </select>
         </div>
 
         <div className="mt-4">
-          {/* Facial Image upload */}
           <label>
             Upload Facial Image:
             <input type="file" onChange={(e) => handleFileUpload(e, 'facialImage')}  />
@@ -216,7 +346,6 @@ const QuestionnaireMRI = () => {
         </div>
 
         <div className="mt-4">
-          {/* Video upload */}
           <label>
             Upload Video:
             <input type="file" onChange={(e) => handleFileUpload(e, 'video')} />
