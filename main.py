@@ -1,15 +1,15 @@
-from fastapi import FastAPI, HTTPException, Depends
-from sklearn.preprocessing import StandardScaler
 import joblib
+from fastapi import FastAPI, HTTPException, UploadFile, File, Depends
+from sklearn.preprocessing import StandardScaler
 import numpy as np
-from fastapi.responses import JSONResponse
 from pydantic import BaseModel
-from typing import List
+from typing import Union
+
 app = FastAPI()
 
-# Load your trained model
+# # Load your trained model
 model = joblib.load("ada_model.joblib")
-# Load your scaler
+# # Load your scaler
 scaler = joblib.load("scaler.joblib")
 
 class PredictionInput(BaseModel):
@@ -31,17 +31,27 @@ class PredictionInput(BaseModel):
     Class_ASD: int  # Assuming 0 for 'NO' and 1 for 'YES'
     # Add any other attributes you may have
 
-    facialImage: UploadFile = None
-    video: UploadFile = None
+class PredictionOutput(BaseModel):
+    prediction: int
 
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
 
-@app.post("/predict")
-def predict(data: dict):
+# @app.get("/items/{item_id}")
+# def read_item(item_id: int, q: Union[str, None] = None):
+#     return {"item_id": item_id, "q": q}
+
+# @app.put("/items/{item_id}")
+# def update_item(item_id: int, item: PredictionInput):
+#     return {"item_name": item.name, "item_id": item_id}
+
+@app.post("/predict", response_model=PredictionOutput)
+def predict(data: PredictionInput, facialImage: UploadFile = File(None), video: UploadFile = File(None)):
     # Extract input data and perform prediction
-    input_data = data.get("input_data")
+    input_data = [data.A1_Score, data.A2_Score, data.A3_Score, data.A4_Score, data.A5_Score, data.A6_Score,
+                  data.A7_Score, data.A8_Score, data.A9_Score, data.A10_Score, data.age, data.gender,
+                  data.ethnicity, data.jundice, data.relation, data.Class_ASD]
 
     # Standardize the input data
     input_data_as_numpy_array = np.asarray(input_data)
@@ -49,6 +59,6 @@ def predict(data: dict):
     std_data = scaler.transform(input_data_reshaped)
 
     # Make a prediction
-    prediction = model.predict(std_data)[0]
+    prediction = int(model.predict(std_data)[0])
 
-    return {"prediction": int(prediction)}
+    return PredictionOutput(prediction=prediction)
