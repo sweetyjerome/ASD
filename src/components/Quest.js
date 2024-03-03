@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
-
+import './Quest.css';
 const QuestionnaireMRI = () => {
   const location = useLocation();
   const { ageGroup } = location.state || {};
@@ -248,8 +248,8 @@ const QuestionnaireMRI = () => {
   
 
   return (
-    <div className="container mt-5">
-      <h2 className="mb-4">Fill in the details</h2>
+    <div className="container-mains ">
+      <h2 className="Heading">Fill in the details</h2>
       <p>Age Group: {ageGroup.toUpperCase()}</p>
 
       <form onSubmit={handleSubmit}>

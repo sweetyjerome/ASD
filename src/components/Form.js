@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Form.css';
 
 const UserContext = React.createContext(); // Create a context to store name and email
 
@@ -35,8 +36,8 @@ const MyForm = () => {
   };
 
   return (
-    <div className="container mt-5 ">
-      <h2 className="mb-4">Fill in the basic details</h2>
+    <div className="container-mains  ">
+      <h2 className="Heading">Fill in the basic details</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
