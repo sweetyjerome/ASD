@@ -11,7 +11,7 @@ from sklearn.metrics import accuracy_score,precision_score, recall_score, f1_sco
 ############### load data fun #############
 
 def load_data():
-  df= pd.read_csv("/content/Quest_data.csv")
+  df= pd.read_csv("Quest_data.csv")
   df.replace('?', pd.NA, inplace=True)
   categorical_cols = ['ethnicity', 'relation']
   for col in categorical_cols:
@@ -86,30 +86,33 @@ def train_model(X,Y):
 def predict_score(classifier,input_data):
   ##### preprocess_input####
 
-  replacement_mapping = {
-        'Self': 1, 'Parent': 1, 'Healthcare Professional': 1,
-        'Others': 0, 'Relative': 0, 'Female': 0,
-        'Male': 1, 'YES': 1, 'NO': 0, 'yes': 1, 'no': 0, 'Yes': 1, 'No': 0
-    }
-  mapped_data = tuple(replacement_mapping.get(value, value) for value in input_data)
-  print (mapped_data)
-
-  input_data_as_numpy_array = np.asarray(mapped_data)
+  #replacement_mapping = {
+  #      'Self': 1, 'Parent': 1, 'Healthcare Professional': 1,
+  #      'Others': 0, 'Relative': 0, 'Female': 0,
+  #      'Male': 1, 'YES': 1, 'NO': 0, 'yes': 1, 'no': 0, 'Yes': 1, 'No': 0
+  #  }
+  #mapped_data = tuple(replacement_mapping.get(value, value) for value in input_data)
+  #print (mapped_data)
+  print('-------------------',type(input_data))
+  input_data_as_numpy_array = np.asarray(input_data)
   input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 
   # standardize the input data
+  scaler = StandardScaler()
+  scaler.fit(input_data_reshaped)
   std_data = scaler.transform(input_data_reshaped)
-  print(std_data)
+  print('std_data',std_data)
 
   ####prediction code #######
 
   prediction = classifier.predict(std_data)
-  print(prediction)
+  print('pred',prediction)
+  return prediction[0]
 
-  if (prediction[0] == 0):
-    print('The person is not with Autism spectrum disorder')
-  else:
-    print('The person is with Autism spectrum disorder')
+  # if (prediction[0] == 0):
+  #   print('The person is not with Autism spectrum disorder')
+  # else:
+  #   print('The person is with Autism spectrum disorder')
 
 
 

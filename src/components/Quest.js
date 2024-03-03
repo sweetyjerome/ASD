@@ -194,7 +194,7 @@ const QuestionnaireMRI = () => {
     facialImage: null,
     video: null, 
   });
-
+  const [result, setResult] = useState('')
   const handleAnswerChange = (question, answer) => {
     setAnswers((prevAnswers) => ({
       ...prevAnswers,
@@ -239,20 +239,24 @@ const QuestionnaireMRI = () => {
       gender: answers.gender,
       jaundice: answers.jaundice,
       relation: answers.relation,
-      facialImage: answers.facialImage,
-      video: answers.video,
     };
 
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(orderedAnswers)
-  };
-  fetch('http://localhost:8000/predict_score', requestOptions)
-      .then(response => response.json())
-      .then(data => setPostId(data.id));
-    console.log('Form submitted!');
-    console.log('Ordered Answers:', orderedAnswers);
+      body: JSON.stringify(orderedAnswers),
+    };
+    fetch('http://localhost:8000/predict_score', requestOptions)
+      .then(response => {
+        return response.json()
+      })
+      .then(data => { console.log('iii', data.message)
+      setResult(data.message)
+    })
+      .catch(err => console.log(err));
+
+    // console.log('Form submitted!');
+    // console.log('Ordered Answers:', orderedAnswers);
   };
   
 
@@ -363,6 +367,7 @@ const QuestionnaireMRI = () => {
         <button type="submit" className="btn btn-primary mt-2">
           Submit
         </button>
+        {result && <div style={{'color': 'black'}}> {result}</div>}
       </form>
     </div>
   );
