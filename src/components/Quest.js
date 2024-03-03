@@ -242,6 +242,15 @@ const QuestionnaireMRI = () => {
       facialImage: answers.facialImage,
       video: answers.video,
     };
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(orderedAnswers)
+  };
+  fetch('http://localhost:8000/predict_score', requestOptions)
+      .then(response => response.json())
+      .then(data => setPostId(data.id));
     console.log('Form submitted!');
     console.log('Ordered Answers:', orderedAnswers);
   };

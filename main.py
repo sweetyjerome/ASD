@@ -1,5 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
+#import train as t
 
 app = FastAPI()
 
@@ -9,6 +10,16 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/items/{A1_Score}")
-def read_item(A1_Score: str, ans: Union[str, None] = None):
-    return {"A1_Score": A1_Score, "ans": ans}
+@app.post("/predict_score/")
+def pred_s(orderedAnswers: str):
+    print(orderedAnswers)
+    #X,Y =  t.load_data()
+    #t.train_model(X,Y)
+    #pred = t.predict_score()
+    #print(pred)
+    
+
+
+
+
+
